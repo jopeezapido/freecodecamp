@@ -1,0 +1,26 @@
+// Declare the myGlobal variable below this line
+var myGlobal = 10;
+
+function fun1() {
+  // Assign 5 to oopsGlobal Here
+  oopsGlobal = 5;
+}
+
+//fun1();//call function of undeclared oopsGlobal first so that oopsGLobal become visible
+
+// Only change code above this line
+
+
+function fun2() {
+  var output = "";
+  if (typeof myGlobal != "undefined") {
+    output += "myGlobal: " + myGlobal;//concatenate output variable value with the said concatenation and assign it again to output
+  }
+  if (typeof oopsGlobal != "undefined") {
+    output += " oopsGlobal: " + oopsGlobal;//this means that we could "see" oopsGlobal since it has global visibility
+  }
+  console.log(output);
+}
+
+console.log(myGlobal);
+console.log(oopsGlobal);

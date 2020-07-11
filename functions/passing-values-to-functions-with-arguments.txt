@@ -1,0 +1,5 @@
+function functionWithArgs (param1, param2) {
+  console.log(param1 + param2);
+}
+functionWithArgs(1, 1);//will out 2 to the dev console
+functionWithArgs(2, 2);//will output 4 to the dev console
