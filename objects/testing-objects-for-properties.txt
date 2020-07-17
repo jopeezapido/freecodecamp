@@ -1,0 +1,31 @@
+function checkObj(obj, checkProp) {
+  // Only change code below this line
+  var test = obj.hasOwnProperty(checkProp);
+  var result;
+
+  //one way to do this:
+  /*
+  if(test === true) {
+    result = obj[checkProp];
+    console.log(result);
+    return result;
+  } else if(test === false) {
+    result = "Not Found";
+    console.log(result);
+    return result;
+  }
+  */
+
+  switch(test) {
+    case true:
+      result = obj[checkProp];
+      console.log(result);
+      return result;
+    case false:
+      result = "Not Found";
+      console.log(result);
+      return result;
+  }
+
+  // Only change code above this line
+}
