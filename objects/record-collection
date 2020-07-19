@@ -32,15 +32,20 @@ function updateRecords(id, prop, value) {
   var tracks;
   //console.log(accessObject);
 
-  if(value == ""){
+  if(value === ""){
     delete collection[prop];
-  } else if(value !== "" || prop == "tracks"){
+  } else if(prop == "tracks" || value !== ""){
     if(trackExists == false){
-      tracks = [] //create property- object.id
-      //create new track value (array) for that property by adding value to end of track value (array)
-    }
-  } 
-    
+      trackArray = [] //create property- with array value
+      accessObject.tracks = trackArray.push(value)//create new track array for created property above
+      console.log("write");
+    }else if(trackExists == true){
+      return collection;
+    } 
+  }
+  //console.log("Write")
+  //console.log(accessObject);
+  console.log(collection);
   return collection;
 }
 
