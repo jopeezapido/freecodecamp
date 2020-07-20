@@ -26,27 +26,34 @@ var collection = {
 };
 
 // Only change code below this line
-function updateRecords(id, prop, value) {
-  var trackExists = collection.hasOwnProperty["tracks"];
-  var accessObject= collection[id];
-  var tracks;
-  //console.log(accessObject);
 
+function updateRecords(id, prop, value) {
+  var tracks = "tracks";
+  var objectAccess = collection[id];
+  var tracksExist = objectAccess.hasOwnProperty(tracks);
+  var propExists =  objectAccess.hasOwnProperty(prop);
+  var array;
+  var check;
+  var pushValue;
+  
   if(value === ""){
-    delete collection[prop];
-  } else if(prop == "tracks" || value !== ""){
-    if(trackExists == false){
-      trackArray = [] //create property- with array value
-      accessObject.tracks = trackArray.push(value)//create new track array for created property above
-      console.log("write");
-    }else if(trackExists == true){
-      return collection;
-    } 
+    delete collection[id][prop];
+  } else if(prop == tracks && value !== "" && tracksExist == false){
+    array = [];
+    objectAccess[prop] = array;//create the prop in the object
+    pushValue = array.push(value);//push value argument to array
+  } else if(prop == tracks && value !== "" && tracksExist == true){
+    pushValue = objectAccess[prop].push(value)
+  } else if(prop !== tracks && value !== "" && tracksExist == false){
+    objectAccess[prop] = value;//create the property
+  } else {
+    objectAccess[prop] = value//create a property named "album" that with value = "value" argument
   }
-  //console.log("Write")
-  //console.log(accessObject);
-  console.log(collection);
   return collection;
 }
 
-updateRecords(5439, "artist", "ABBA");
+//pushValue = objectAccess[prop];
+
+console.log(collection);
+
+updateRecords(1245, "album", "Riptide");
