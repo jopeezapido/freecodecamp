@@ -1,0 +1,14 @@
+// Setup
+var myArray = [];
+
+// Only change code below this line
+var arrayItem = 0;
+
+while(arrayItem <= 5){
+  myArray.push(arrayItem);
+  arrayItem++;
+} 
+
+myArray.reverse();
+
+console.log(myArray);
